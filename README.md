@@ -73,7 +73,15 @@ import matplotlib
 
 ## 4. 使用说明
 
-程序启动后，您将看到一个图形用户界面（GUI）。在该GUI中，您可以进行以下操作：
+程序启动后，您将看到一个图形用户界面（GUI）:
+<div align=center>
+<img src="碳排放预测v1.1.0/prediction.png" width="756" height="420"> 
+</div>
+<div align=center>
+<img src="碳排放预测v1.1.0/plot.png" width="756" height="420"> 
+</div>
+
+在该GUI中，您可以进行以下操作：
 ### 4.1 碳排放预测
 1. **模型导入**：
    - 点击“选择模型路径”按钮，选择已经训练好的模型文件（通常是 `.pth` 格式的文件）。
