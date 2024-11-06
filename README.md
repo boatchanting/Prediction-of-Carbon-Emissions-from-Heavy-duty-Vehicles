@@ -1,3 +1,155 @@
+# Carbon Emission Prediction v1.1.0
+
+## 1. Environment Configuration
+
+Before running this project, please ensure that the development environment has been correctly configured. It is recommended to use a virtual environment to isolate project dependencies and ensure consistency with the versions of the project's dependency packages.
+
+### 1.1 Create a Virtual Environment
+
+You can create a virtual environment using `venv` or `conda`. Below is an example of creating a virtual environment using `venv`:
+
+```bash
+# Create a virtual environment in the project root directory
+python -m venv venv
+
+# Activate the virtual environment
+# Windows:
+venv\Scripts\activate
+
+# macOS/Linux:
+source venv/bin/activate
+```
+
+### 1.2 Install Dependencies
+
+The project's dependencies are listed in the `requirements.txt` file. After activating the virtual environment, run the following command to install all dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+If the above method does not work properly, you can also manually install the following dependencies:
+
+```bash
+pip install torch # It is recommended to change it to a version of torch compatible with your CUDA version; by default, the installed torch is the CPU version, link (https://pytorch.org/)
+pip install PyQt5
+
+pip install numpy
+pip install pandas
+pip install seaborn
+pip install matplotlib
+```
+
+### 1.3 Verify Installation
+
+After installation, you can verify that all dependencies have been successfully installed by running the following commands:
+
+```python
+import torch
+import PyQt5
+import numpy
+import pandas
+import seaborn
+import matplotlib
+```
+
+If there are no error messages, it indicates that the environment configuration is correct, and you can start running the project code.
+
+## 2. Launching the Program
+After configuring all dependencies, you can launch the program through the following steps:
+1. Ensure the virtual environment is activated (refer to Section 1.1).
+2. Double-click the `Double_Click_Me!.bat` file in the project directory.
+3. The `Double_Click_Me!.bat` file has been configured with all commands required to start the program; simply double-click it to easily start the project.
+
+## 3. Data Preparation
+
+Before running the program, make sure you have prepared the data files. The data files should contain the following content:
+
+- Time-series data sampled every 1 second during vehicle operation, with the column name `speed`, unit km/h.
+- Sample data is located in the `model` folder, with the filename `speed example.xlsx`.
+
+Ensure the data file format is correct and the column names match the expectations in the program.
+
+---
+
+## 4. User Guide
+
+After launching the program, you will see a graphical user interface (GUI):
+<div align=center>
+<img src="carbon_emission_prediction_v1.1.0/prediction.png" width="756" height="420">
+</div>
+<div align=center>
+<img src="carbon_emission_prediction_v1.1.0/plot.png" width="756" height="420">
+</div>
+
+In this GUI, you can perform the following operations:
+### 4.1 Carbon Emission Prediction
+1. **Model Import**:
+   - Click the "Select Model Path" button to choose a trained model file (usually a `.pth` formatted file).
+   - This model file will be loaded into the program for predicting input data.
+
+2. **Data Import**:
+   - Click the "Select Data Path" button to choose an Excel file (`xlsx` format) containing the data to be predicted.
+   - The program will use this data for carbon emission prediction.
+
+3. **Output Path Setting**:
+   - In the "Select Output Folder" section, you can choose the output path for the prediction results.
+     - **Same as Input Data Path**: The output results will be saved in the same folder as the input data.
+     - **Desktop**: The output results will be saved on the desktop.
+     - **Custom Path**: You can select a custom path as the output folder. After selection, the system will automatically update the display of the output path.
+
+4. **Filename Setting**:
+   - In the "Output Filename" field, you can modify the name of the output result file. By default, the program will generate an appropriate output filename based on the input data filename.
+
+5. **Execute Prediction**:
+   - Click the "Execute Prediction" button, and the program will load the model and predict the input data.
+   - After the prediction is complete, the results will be saved as an Excel file and displayed at the specified output path.
+
+6. **Prediction Results**:
+   - The prediction results will include the input speed data `speed(km/h)` and corresponding carbon emission prediction values `emission(kg/s)`.
+   - The results will be automatically saved as an Excel file, with the filename and path determined according to your settings.
+
+### 4.2 Visualization of Carbon Emission Prediction Results
+
+1. **Switch Interface**:
+   - Switch the interface to the 'Data Visualization' screen.
+
+2. **Data File Path Setting**:
+   - **Select Data File**:
+     - Click the "Browse" button to open the file selection dialog.
+     - Choose an Excel file (`xlsx` format) containing the data. After selection, the file path will be displayed in the "Data File Path" input box.
+
+3. **Plot Style Selection**:
+   - **Set Plot Style**:
+     - Select a style from the "Plot Style" drop-down menu, such as "white grid", "black grid", "black", or "ticks". After selection, the chart style will adjust according to the selected style.
+
+4. **Smooth Curve Settings**:
+   - **Display Smooth Curve**:
+     - Check or uncheck the "Smooth Curve" checkbox to choose whether to display a smooth curve in the chart.
+   - **Set Smoothing Factor**:
+     - Use the "Smoothing Factor" slider to adjust the smoothing factor. The value of the smoothing factor will be shown in the label next to the slider. The default value is 0.05, ranging from 0.01 to 0.30.
+
+5. **Plot Type Selection**:
+   - **Select Plot Type**:
+     - Choose a plot type from the "Plot Type" drop-down menu, such as "Emission", "Speed", "Cumulative Speed", or "Cumulative Emission". Based on the selected type, the chart will display different data contents.
+
+6. **Line Color Setting**:
+     - Select a color from the "Line Color" drop-down menu. If "Custom" is selected, click the "Select Custom Line Color" button to open the color selection dialog and choose the desired custom color.
+
+7. **Smooth Curve Color Setting**:
+    - Select a color from the "Smooth Curve Color" drop-down menu. If "Custom" is selected, click the "Select Custom Smooth Curve Color" button to open the color selection dialog and choose the desired custom color.
+
+8. **Draw Data**:
+   - Click the "Draw Data" button, and the application will draw the data chart based on the set parameters. The chart will be displayed in the right area of the application.
+
+9. **Save Chart**:
+    - Click the "Save Image" button to open the file save dialog.
+    - Choose a save path and filename, and save the chart as a PNG image file (`png`).
+
+## 5. Exit the Application:
+
+Close the application window to terminate script execution and exit the application.
+
 # 碳排放预测v1.1.0
 
 ## 1. 环境配置
@@ -33,6 +185,7 @@ pip install -r requirements.txt
 ```bash
 pip install torch # 建议更改为适配你的CUDA版本的torch，默认安装的torch是cpu版本，链接(https://pytorch.org/)
 pip install PyQt5
+
 pip install numpy
 pip install pandas
 pip install seaborn
