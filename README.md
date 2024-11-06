@@ -76,10 +76,10 @@ Ensure the data file format is correct and the column names match the expectatio
 
 After launching the program, you will see a graphical user interface (GUI):
 <div align=center>
-<img src="carbon_emission_prediction_v1.1.0/prediction.png" width="756" height="420">
+<img src="碳排放预测v1.1.0/prediction.png" width="756" height="420"> 
 </div>
 <div align=center>
-<img src="carbon_emission_prediction_v1.1.0/plot.png" width="756" height="420">
+<img src="碳排放预测v1.1.0/plot.png" width="756" height="420"> 
 </div>
 
 In this GUI, you can perform the following operations:
