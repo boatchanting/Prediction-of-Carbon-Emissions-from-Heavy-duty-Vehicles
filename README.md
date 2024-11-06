@@ -1,10 +1,12 @@
 # Carbon Emission Prediction v1.1.0
+
 <div align=center>
 <img src="碳排放预测v1.1.0/prediction.png" width="756" height="420"> 
 </div>
 <div align=center>
 <img src="碳排放预测v1.1.0/plot.png" width="756" height="420"> 
 </div>
+
 ## 1. Environment Configuration
 
 Before running this project, please ensure that the development environment has been correctly configured. It is recommended to use a virtual environment to isolate project dependencies and ensure consistency with the versions of the project's dependency packages.
